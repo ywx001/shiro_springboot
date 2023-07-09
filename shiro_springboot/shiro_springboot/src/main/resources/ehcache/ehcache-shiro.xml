@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ehcache>
+
+    <!--磁盘存储位置-->
+    <diskStore path="java.io.tmpdir/ehcache"/>
+
+    <!-- 缓存管理器配置 -->
+    <defaultCache maxEntriesLocalHeap="10000"
+                  eternal="false"
+                  timeToIdleSeconds="120"
+                  timeToLiveSeconds="120"
+                  diskSpoolBufferSizeMB="30"
+                  memoryStoreEvictionPolicy="LRU"
+                  statistics="true">
+        <persistence strategy="localTempSwap"/>
+    </defaultCache>
+
+    <!-- 自定义缓存配置，可根据需要添加多个 -->
+    <!--登录认证信息缓存：缓存用户权限信息-->
+    <cache name="loginRolePsCache"
+           maxEntriesLocalHeap="1000"
+           eternal="false"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="600"
+           memoryStoreEvictionPolicy="LFU"/>
+
+</ehcache>
