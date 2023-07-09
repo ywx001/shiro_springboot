@@ -19,7 +19,9 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("myController")
 public class MyController {
 
-    //跳转登录页面
+    /**
+     * 跳转登录页面
+     */
     @GetMapping("login")
     public String login(){
         return "login";

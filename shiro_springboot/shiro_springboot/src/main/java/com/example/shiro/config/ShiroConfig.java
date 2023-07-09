@@ -14,15 +14,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * @author y
+ */
 @Configuration
 public class ShiroConfig {
-    @Autowired
+    @Resource
     private MyRealm myRealm;
 
-    // 配置SecurityManager
+    /**
+     * 配置SecurityManager
+     */
     @Bean
     public DefaultWebSecurityManager defaultWebSecurityManager() {
         //1创建对象
